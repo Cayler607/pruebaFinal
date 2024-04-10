@@ -1,0 +1,36 @@
+h1 {
+	font-size: 50px;
+	font-family: "times new roman";
+	margin-left: 10px;
+	color: white;
+	border: write 2px solid;
+	background-color: gray;
+}
+
+
+h2
+ {
+	
+	color:green;
+    font-size: 25px;
+	font-family: verdana;
+	margin-left: 15px;
+}
+h3{
+	color: green;
+	font-size: 25px;
+	font-family: verdana;
+	margin-left: 15px;
+
+}
+h4{
+	color: green;
+	font-size: 25px;
+	font-family: verdana;
+	margin-left: 15px;
+}
+
+p {
+	color:black;
+	margin-left: 20px;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mi curso</title>
+<link href= "variables.css" rel="stylesheet">
+<link href= "trabajos.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <script src="app.js"></script>
+<h1>Mi perfil</h1>
+
+<section>
+<h2>Sobre mi</h2>
+
+<p> Siendo joven y considerandome
+una persona aventurera, inquieta  y que le gusta aprender
+buscando siempre ofrecer lo bueno como buscar nuevos retos.
+</p>
+  
+</section>
+
+<section>
+
+<h3> Experiencia</h3>
+
+<p> Me gusta tratar la experiencia de trabajo de atencion al clientes , aprecio el trabajo de contabilidad y
+de la rama de farmacologia y del estudio de informatica
+</p>
+</section>
+
+
+<section>
+<h4> Educacion</h4>
+<p>Cursando actualmente la informatica y con cursos de auxiliar de farmacia e ingles . 
+  </p> 
+
+</section>
+
+<section>
+<h5> </h5>    
+
+<form class="form" id="miFormulario">
+
+  git remoto agregar origen https://github.com/Cayler607/prueba.git
+ git rama -M principal 
+git push -u origen principal
+
+
+    <div class="form_container">
+<h5 class="form_title">Contactame </h5>
+<form id="miFormulario">
+	<label for="nombre">Nombre:</label>
+    <input class="form_input" type="text" id="nombre" name="nombre">
+
+	<label for="correo">Correo electrónico:</label>
+    <input class="form_input" type="email" id="correo" name="correo">
+	
+    <label for="msj">mensaje:</label>
+    <textarea  type="text" id="msj" name="msj" class="form_input form_input--message" placeholder="Mensaje"></textarea>
+
+    <input type="submit" value="Enviar">
+</form>
+</div>
+    
+
+
+  <script>
+   function enviarFormulario() {
+
+      const nombre = document.getElementById('nombre').value.trim();
+	  const msj = document.getElementById('msj').value.trim();
+      const correo = document.getElementById('correo').value.trim();
+
+      const datosFormulario = {
+        nombre: nombre,
+        msj: msj,
+        correo: correo
+      };
+
+
+      const urlDestino = 'https://ejemplo.com/destino';
+      fetch(urlDestino, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datosFormulario)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Hubo un problema al enviar los datos.');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Respuesta del servidor:', data);
+        alert('Datos enviados correctamente.');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Hubo un problema al enviar los datos.');
+      });
+    }
+  
+  
+  
+  
+    document.getElementById('miFormulario').addEventListener('submit', function(event) {
+      event.preventDefault();
+	  
+      const nombre = document.getElementById('nombre').value.trim();
+      const msj = document.getElementById('msj').value.trim();
+      const correo = document.getElementById('correo').value.trim();
+	  
+      if (nombre === '' || msj === '') {
+        alert('Por favor, completa los campos de nombre y mensaje');
+        return;
+      }
+      const correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!correoRegex.test(correo)) {
+        alert('Por favor, ingresa un correo electrónico válido.');
+        return;
+      }
+      alert('Formulario válido. ¡Se puede enviar!');
+	  enviarFormulario();
+    });
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
